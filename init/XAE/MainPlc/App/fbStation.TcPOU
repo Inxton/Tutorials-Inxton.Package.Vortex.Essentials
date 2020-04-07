@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="fbStation" Id="{7ce0f56f-7ff2-4971-bd9e-318f7037cca7}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute wpf [Container(Layout.Tabs)]}
+FUNCTION_BLOCK fbStation
+VAR		
+	{attribute wpf [Container(Layout.Stack)]}
+	{attribute addProperty Name "<#Select mode#>"}
+	_modeSelector : enumMode;
+	{attribute clr [ReadOnly()]}
+	{attribute addProperty Name "<#CurrentMode#>"}
+	_modeCurrent : enumMode;
+		
+	{attribute addProperty Name "<#Step description#>"}
+	_stepInfo : STRING[255];
+	
+	{attribute addProperty Name "<#Error description#>"}
+	_errorInfo : STRING[255];
+	
+	{attribute addProperty Name "<#Components#>"}
+	_components : stComponents;
+	
+	{attribute addProperty Name "<#Data#>"}
+	_data : stData;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+_errorInfo := '<#No Error#>';
+
+_modeCurrent := _modeSelector;
+
+CASE _modeCurrent OF
+	enumMode.Ground :
+		GroundMode();
+	enumMode.Automat :
+		AutomatMode();
+	enumMode.Manual:
+		ManualMode();	
+END_CASE]]></ST>
+    </Implementation>
+    <Method Name="AutomatMode" Id="{a16ec520-3a9b-4e7a-85d1-cc62c95f78b3}">
+      <Declaration><![CDATA[METHOD AutomatMode
+
+VAR_INST
+	_step : INT;
+	_isOk : BOOL;	
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE _step OF
+	0:		
+		_stepInfo := '<#Checking base position#>';		
+		IF(_components._verticalPiston.Retract() 
+		AND_THEN _components._gripper.Extend() 
+		AND_THEN _components._horizontalPiston.Retract()) 
+		THEN
+			_step := 100;		
+		END_IF
+	100:
+	   _stepInfo := '<#Measure the parameters.#>';
+	   _isOk := fcEvalConitinuos(Val := 0.0, Data := _data.DimX)
+				AND fcEvalConitinuos(Val := 0.0, Data := _data.DimY)
+				AND fcEvalConitinuos(Val := 0.0, Data := _data.DimZ);
+
+		_step := 200;				
+	200:
+		_stepInfo := '<#Take entity#>';
+		IF(_components._verticalPiston.Extend() 
+		AND_THEN _components._gripper.Retract())
+		THEN
+			IF _isOK THEN
+				_step := 300;
+			ELSE	
+				_step := 500;
+			END_IF;	
+		END_IF;   
+	300:
+		_stepInfo := '<#Move entity to Passed conveyor#>';
+		IF(_components._horizontalPiston.Extend()
+		AND_THEN _components._verticalPiston.Extend() 
+		AND_THEN _components._gripper.Retract())
+		THEN
+			_step := 500;
+		END_IF;		
+	400:
+		_stepInfo := '<#Move entity to Failed conveyor#>';
+		IF(_components._horizontalPistonLockerFailed.Extend()
+		AND_THEN _components._horizontalPiston.Extend()
+		AND_THEN _components._verticalPiston.Extend() 
+		AND_THEN _components._gripper.Retract())
+		THEN
+			_step := 500;
+		END_IF;			
+	500:
+		_step := 0;	
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GroundMode" Id="{ba79095a-266f-4b92-b4b8-ce063861ab4f}">
+      <Declaration><![CDATA[METHOD GroundMode : BOOL
+VAR_INST
+	_step : INT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE _step OF
+	0:		
+		_stepInfo := '<#Moving everything to ground position#>';		
+		IF(_components._verticalPiston.Retract() 
+		AND_THEN _components._gripper.Extend() 
+		AND_THEN _components._horizontalPiston.Retract()) 
+		THEN
+			_step := 100;		
+		END_IF
+	100:
+	   _stepInfo := '<#All in position ready to start#>';
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="ManualMode" Id="{c6dac779-a999-44c0-8cdb-a17ac5a37643}">
+      <Declaration><![CDATA[METHOD ManualMode : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[_components._gripper.Manual();
+_components._horizontalPiston.Manual();
+_components._verticalPiston.Manual();]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="fbStation">
+      <LineId Id="47" Count="1" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="38" Count="1" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="16" Count="2" />
+      <LineId Id="68" Count="1" />
+      <LineId Id="20" Count="0" />
+    </LineIds>
+    <LineIds Name="fbStation.AutomatMode">
+      <LineId Id="12" Count="10" />
+      <LineId Id="43" Count="2" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="24" Count="2" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="29" Count="1" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="37" Count="0" />
+      <LineId Id="34" Count="2" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="56" Count="1" />
+      <LineId Id="62" Count="0" />
+      <LineId Id="58" Count="3" />
+      <LineId Id="55" Count="0" />
+      <LineId Id="53" Count="1" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="fbStation.GroundMode">
+      <LineId Id="5" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="16" Count="2" />
+      <LineId Id="13" Count="1" />
+      <LineId Id="20" Count="1" />
+      <LineId Id="11" Count="0" />
+    </LineIds>
+    <LineIds Name="fbStation.ManualMode">
+      <LineId Id="5" Count="2" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="fcEvalConitinuos" Id="{e63b02de-1ad8-4dfc-8e0c-28ef7017ed74}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION fcEvalConitinuos : BOOL
+VAR_INPUT
+	Val : REAL;
+	Data : stContinuosValueData;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Data.Measured := Val;
+fcEvalConitinuos := (Data.Mininum >= Data.Measured AND Data.Maximum <= Data.Measured);
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="fcEvalConitinuos">
+      <LineId Id="15" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

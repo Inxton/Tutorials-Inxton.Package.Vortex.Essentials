@@ -1,0 +1,145 @@
+2020-04-02 11:30:38.645 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 11:30:38.879 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 11:30:38.879 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 11:30:38.979 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-02 11:30:40.493 +02:00 [WRN] Unable to retrieve 'tmc' file
+2020-04-02 11:30:40.494 +02:00 [WRN] Unable to retrieve 'tmc' file
+2020-04-02 11:30:40.815 +02:00 [WRN] Unable to update localization file in project MainPlcConnector
+2020-04-02 11:43:47.372 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 11:43:47.557 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 11:43:47.558 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 11:43:47.649 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-02 11:43:48.871 +02:00 [WRN] Unable to retrieve 'tmc' file
+2020-04-02 11:43:48.872 +02:00 [WRN] Unable to retrieve 'tmc' file
+2020-04-02 13:08:10.574 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 13:08:10.799 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 13:08:10.800 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 13:08:10.997 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-02 13:09:19.585 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 13:09:19.770 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 13:09:19.771 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 13:09:19.861 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-02 13:16:21.225 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 13:16:21.408 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 13:16:21.409 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 13:16:21.502 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-02 13:19:02.835 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 13:19:03.012 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 13:19:03.013 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 13:19:03.107 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-02 13:32:19.324 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 13:32:19.509 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 13:32:19.510 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 13:32:19.610 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-02 13:33:26.411 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 13:33:26.588 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 13:33:26.588 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 13:33:26.728 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-02 13:34:54.803 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 13:34:55.010 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 13:34:55.011 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 13:34:55.151 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-02 13:35:45.043 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 13:35:45.223 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 13:35:45.224 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 13:35:45.311 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-02 13:47:50.200 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 13:47:50.374 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 13:47:50.375 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 13:47:50.502 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-02 14:01:00.220 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 14:01:00.395 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 14:01:00.395 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 14:01:00.536 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-02 14:03:07.276 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 14:03:07.452 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 14:03:07.453 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 14:03:07.542 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-02 14:08:09.892 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 14:08:10.082 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 14:08:10.083 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 14:08:10.178 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-02 14:15:07.699 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 14:15:07.894 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 14:15:07.895 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 14:15:07.985 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-02 15:06:56.396 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 15:06:56.583 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 15:06:56.584 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 15:06:56.675 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-02 15:08:03.662 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 15:08:03.853 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 15:08:03.854 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 15:08:03.951 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-02 15:49:24.001 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 15:49:24.193 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 15:49:24.194 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 15:49:24.361 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-02 16:24:58.750 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 16:24:58.941 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 16:24:58.942 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 16:24:59.066 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-02 16:28:04.091 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 16:28:04.272 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 16:28:04.272 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 16:28:04.409 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-02 16:39:09.614 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 16:39:09.819 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 16:39:09.820 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 16:39:09.983 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-02 16:39:37.178 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-02 16:39:37.381 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-02 16:39:37.382 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-02 16:39:37.521 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-03 07:42:41.179 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-03 07:42:41.420 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-03 07:42:41.421 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-03 07:42:41.565 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-03 07:44:12.866 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-03 07:44:13.099 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-03 07:44:13.101 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-03 07:44:13.266 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-03 07:45:23.633 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-03 07:45:23.841 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-03 07:45:23.842 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-03 07:45:23.942 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-03 09:51:04.423 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-03 09:51:04.678 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-03 09:51:04.679 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-03 09:51:04.866 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-03 09:56:39.167 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-03 09:56:39.477 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-03 09:56:39.478 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-03 09:56:39.660 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-03 13:19:50.467 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-03 13:19:50.731 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-03 13:19:50.731 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-03 13:19:50.880 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-03 13:28:25.606 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-03 13:28:25.821 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-03 13:28:25.822 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-03 13:28:25.942 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-03 13:57:55.421 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-03 13:57:55.768 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-03 13:57:55.769 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-03 13:57:55.905 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-03 14:03:03.074 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-03 14:03:03.494 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-03 14:03:03.495 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-03 14:03:03.873 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-03 14:03:35.334 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-03 14:03:35.972 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-03 14:03:35.974 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-03 14:03:36.395 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-03 14:12:00.973 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-03 14:12:01.968 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-03 14:12:01.969 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-03 14:12:02.669 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-03 14:17:38.050 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\XAE.sln
+2020-04-03 14:17:38.983 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-03 14:17:38.985 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-03 14:17:39.688 +02:00 [INF] Updating project MainPlc.MainPlc
+2020-04-06 08:58:22.320 +02:00 [INF] Opening solution: C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\init\XAE.sln
+2020-04-06 08:58:22.617 +02:00 [INF] Building project 'MainPlc.MainPlc'
+2020-04-06 08:58:22.618 +02:00 [INF] Installing project libraries into project 'MainPlc'
+2020-04-06 08:58:22.833 +02:00 [INF] Updating project MainPlc.MainPlc

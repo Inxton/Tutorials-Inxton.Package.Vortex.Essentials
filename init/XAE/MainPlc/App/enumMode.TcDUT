@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <DUT Name="enumMode" Id="{6c64851c-a2a6-4153-9ba4-dbc1b6cc7a1c}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE enumMode :
+(
+	None := 0,
+	Ground := 10,
+	Automat := 20,
+	Manual := 30
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

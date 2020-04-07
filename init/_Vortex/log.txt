@@ -1,0 +1,113 @@
+2020-04-02 11:30:35.450 +02:00 [INF] Builder version : 0.115.0.0 / 0.115.0-preview.1+Branch.tags/0.115.0-preview.1.Sha.39c78bd5c90c2a4416e7427362425d099f3f024d
+2020-04-02 11:30:35.768 +02:00 [WRN] >>>>>>"W","","Config file C:\MTS\Develop\foxtroth\github\Tutorials-Inxton.Package.Vortex.Essentials\XAE\_Vortex\vortex_config.json does not exists. Creating default one with defaults.","","","0","0"
+2020-04-02 11:30:39.696 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 11:30:40.844 +02:00 [INF] >>>>>>I, Done
+2020-04-02 11:43:29.038 +02:00 [INF] Builder version : 0.115.0.0 / 0.115.0-preview.1+Branch.tags/0.115.0-preview.1.Sha.39c78bd5c90c2a4416e7427362425d099f3f024d
+2020-04-02 11:43:48.222 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 11:43:48.991 +02:00 [INF] >>>>>>I, Done
+2020-04-02 13:08:06.560 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-02 13:08:11.705 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 13:08:12.624 +02:00 [INF] >>>>>>I, Done
+2020-04-02 13:09:16.352 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-02 13:09:20.412 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 13:09:21.132 +02:00 [INF] >>>>>>I, Done
+2020-04-02 13:16:18.558 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-02 13:16:22.052 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 13:16:22.766 +02:00 [INF] >>>>>>I, Done
+2020-04-02 13:18:19.407 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-02 13:19:03.655 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 13:19:04.366 +02:00 [INF] >>>>>>I, Done
+2020-04-02 13:32:16.485 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-02 13:32:20.191 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 13:32:20.881 +02:00 [INF] >>>>>>I, Done
+2020-04-02 13:33:23.884 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-02 13:33:27.281 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 13:33:27.984 +02:00 [INF] >>>>>>I, Done
+2020-04-02 13:34:52.186 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-02 13:34:55.701 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 13:34:56.417 +02:00 [INF] >>>>>>I, Done
+2020-04-02 13:35:41.263 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-02 13:35:45.864 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 13:35:46.629 +02:00 [INF] >>>>>>I, Done
+2020-04-02 13:47:47.280 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-02 13:47:51.064 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 13:47:51.746 +02:00 [INF] >>>>>>I, Done
+2020-04-02 14:00:57.593 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-02 14:01:01.093 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 14:01:01.738 +02:00 [INF] >>>>>>I, Done
+2020-04-02 14:03:04.637 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-02 14:03:08.109 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 14:03:08.833 +02:00 [INF] >>>>>>I, Done
+2020-04-02 14:08:06.947 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-02 14:08:10.754 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 14:08:11.463 +02:00 [INF] >>>>>>I, Done
+2020-04-02 14:15:05.038 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-02 14:15:08.674 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 14:15:09.486 +02:00 [INF] >>>>>>I, Done
+2020-04-02 15:06:53.545 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-02 15:06:57.236 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 15:06:57.941 +02:00 [INF] >>>>>>I, Done
+2020-04-02 15:08:00.989 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-02 15:08:04.516 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 15:08:05.221 +02:00 [INF] >>>>>>I, Done
+2020-04-02 15:49:21.107 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-02 15:49:25.002 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 15:49:25.858 +02:00 [INF] >>>>>>I, Done
+2020-04-02 16:24:55.866 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-02 16:24:59.630 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 16:25:00.378 +02:00 [INF] >>>>>>I, Done
+2020-04-02 16:28:01.636 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-02 16:28:04.946 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 16:28:05.642 +02:00 [INF] >>>>>>I, Done
+2020-04-02 16:39:07.044 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-02 16:39:10.548 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 16:39:11.299 +02:00 [INF] >>>>>>I, Done
+2020-04-02 16:39:34.742 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-02 16:39:38.084 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-02 16:39:38.771 +02:00 [INF] >>>>>>I, Done
+2020-04-03 07:42:36.476 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-03 07:42:42.148 +02:00 [ERR] >>>>>>"E","","Mal-formed  string literal - cannot find termination symbol.","MainPlc","fbStation","12","36"
+2020-04-03 07:42:42.160 +02:00 [WRN] >>>>>>"W","","Type 'fbStation' declared in 'MainPlc.MAIN' is unknown it won't be used. If the type should be known check the reference; letter casing of the type identifier; correct namespace in which the type is located","MainPlc","MAIN","0","0"
+2020-04-03 07:42:42.591 +02:00 [ERR] >>>>>>"E","","Project MainPlc encountered problem and will not compile. Check for above reported messages","","","0","0"
+2020-04-03 07:42:42.591 +02:00 [INF] >>>>>>I, Done
+2020-04-03 07:44:08.448 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-03 07:44:13.845 +02:00 [ERR] >>>>>>"E","","Mal-formed  string literal - cannot find termination symbol.","MainPlc","fbStation","12","36"
+2020-04-03 07:44:13.857 +02:00 [WRN] >>>>>>"W","","Type 'fbStation' declared in 'MainPlc.MAIN' is unknown it won't be used. If the type should be known check the reference; letter casing of the type identifier; correct namespace in which the type is located","MainPlc","MAIN","0","0"
+2020-04-03 07:44:14.243 +02:00 [ERR] >>>>>>"E","","Project MainPlc encountered problem and will not compile. Check for above reported messages","","","0","0"
+2020-04-03 07:44:14.243 +02:00 [INF] >>>>>>I, Done
+2020-04-03 07:45:19.841 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-03 07:45:24.713 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-03 07:45:25.859 +02:00 [INF] >>>>>>I, Done
+2020-04-03 09:51:01.656 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-03 09:51:05.648 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-03 09:51:06.742 +02:00 [INF] >>>>>>I, Done
+2020-04-03 09:56:33.521 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-03 09:56:40.293 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-03 09:56:41.114 +02:00 [INF] >>>>>>I, Done
+2020-04-03 13:19:47.642 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-03 13:19:51.650 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-03 13:19:52.641 +02:00 [INF] >>>>>>I, Done
+2020-04-03 13:28:22.365 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-03 13:28:26.543 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-03 13:28:27.321 +02:00 [INF] >>>>>>I, Done
+2020-04-03 13:57:52.757 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-03 13:57:56.533 +02:00 [ERR] >>>>>>"E","","Syntax error, expected: ,, )","MainPlc","stContinuosValueData","7","63"
+2020-04-03 13:57:56.534 +02:00 [WRN] >>>>>>"W","","Type 'stContinuosValueData' declared in 'MainPlc.stData' is unknown it won't be used. If the type should be known check the reference; letter casing of the type identifier; correct namespace in which the type is located","MainPlc","stData","0","0"
+2020-04-03 13:57:56.534 +02:00 [WRN] >>>>>>"W","","Type 'stContinuosValueData' declared in 'MainPlc.stData' is unknown it won't be used. If the type should be known check the reference; letter casing of the type identifier; correct namespace in which the type is located","MainPlc","stData","0","0"
+2020-04-03 13:57:56.672 +02:00 [ERR] >>>>>>"E","","Project MainPlc encountered problem and will not compile. Check for above reported messages","","","0","0"
+2020-04-03 13:57:56.672 +02:00 [INF] >>>>>>I, Done
+2020-04-03 14:03:00.102 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-03 14:03:04.909 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-03 14:03:06.791 +02:00 [INF] >>>>>>I, Done
+2020-04-03 14:03:31.857 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-03 14:03:37.798 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-03 14:03:39.970 +02:00 [INF] >>>>>>I, Done
+2020-04-03 14:11:56.546 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-03 14:12:04.905 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-03 14:12:08.307 +02:00 [INF] >>>>>>I, Done
+2020-04-03 14:17:33.917 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-03 14:17:42.567 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-03 14:17:45.885 +02:00 [INF] >>>>>>I, Done
+2020-04-06 08:58:17.745 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
+2020-04-06 08:58:23.839 +02:00 [INF] Compiling sources 'MainPlc'...
+2020-04-06 08:58:25.324 +02:00 [INF] >>>>>>I, Done
