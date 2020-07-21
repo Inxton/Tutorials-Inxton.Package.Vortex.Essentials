@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+  <POU Name="fbPneumaticActuator" Id="{0897ab47-2dcc-4aaf-a97d-9b6927968f1d}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute wpf [Container(Layout.Wrap)]}
+{attribute wpf [Group(Layout.GroupBox)]}
+FUNCTION_BLOCK fbPneumaticActuator
+VAR_INPUT
+	{attribute wpf [Container(Layout.Stack)]}	
+	{attribute addProperty Name "Retracted"}
+	{attribute addProperty ToolTip "Sensor indicating that the actuator is retracted"}
+	inRetracted : BOOL;	
+	{attribute addProperty Name "Extended"}
+	{attribute addProperty ToolTip "Sensor indicating that the actuator is extended"}
+	inExtended : BOOL;	
+END_VAR
+VAR_OUTPUT
+	{attribute wpf [Container(Layout.Stack)]}
+	{attribute addProperty Name "Retract"}
+	{attribute addProperty ToolTip "Signal for retracting"}
+	outRetract : BOOL;
+	{attribute addProperty Name "Extend"}
+	{attribute addProperty ToolTip "Signal for Extending"}
+	outExtend : BOOL;
+END_VAR
+VAR
+	{attribute wpf [Container(Layout.UniformGrid)]}
+	{attribute addProperty Name "Retract command"}
+	{attribute addProperty ToolTip "Executes retraction in manual mode"}
+	_manualRetract : BOOL;
+	{attribute addProperty Name "Extend command"}
+	{attribute addProperty ToolTip "Executes extension in manual mode"}
+	_manualExtend : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Extend" Id="{4f8afd74-75b4-4631-a3c1-60b5d2b2c6d7}">
+      <Declaration><![CDATA[METHOD Extend : BOOL
+
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[THIS^.outRetract := FALSE;
+THIS^.outExtend := TRUE;
+
+Extend := THIS^.inExtended;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Manual" Id="{e6a42619-97d5-4f12-a513-82a72cd35d49}">
+      <Declaration><![CDATA[METHOD Manual
+
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF(THIS^._manualExtend AND_THEN THIS^.Extend()) THEN THIS^._manualExtend := FALSE; END_IF;
+IF(THIS^._manualRetract AND_THEN THIS^.Retract()) THEN THIS^._manualRetract := FALSE; END_IF;
+
+THIS^._manualExtend := FALSE;
+THIS^._manualRetract := FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Retract" Id="{b1f8fc57-17ea-4721-8bb1-f5236524cc91}">
+      <Declaration><![CDATA[METHOD Retract : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[THIS^.outRetract := TRUE;
+THIS^.outExtend := FALSE;
+
+Retract := THIS^.inRetracted;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="fbPneumaticActuator">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="fbPneumaticActuator.Extend">
+      <LineId Id="5" Count="1" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+    <LineIds Name="fbPneumaticActuator.Manual">
+      <LineId Id="5" Count="1" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="11" Count="0" />
+    </LineIds>
+    <LineIds Name="fbPneumaticActuator.Retract">
+      <LineId Id="5" Count="1" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

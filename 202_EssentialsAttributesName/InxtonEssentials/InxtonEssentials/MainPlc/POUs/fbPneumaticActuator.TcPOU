@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+  <POU Name="fbPneumaticActuator" Id="{62afcfcf-c61c-4ad2-9fa1-449d45693563}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK fbPneumaticActuator
+VAR_INPUT
+	{attribute addProperty Name "Retracted"}
+	{attribute addProperty ToolTip "Sensor indicating that the actuator is retracted"}
+	inRetracted : BOOL;
+	{attribute addProperty Name "Extended"}
+	{attribute addProperty ToolTip "Sensor indicating that the actuator is extended"}
+	inExtended : BOOL;
+END_VAR
+VAR_OUTPUT
+	{attribute addProperty Name "Retract"}
+	{attribute addProperty ToolTip "Signal for retracting"}
+	outRetract : BOOL;
+	{attribute addProperty Name "Extend"}
+	{attribute addProperty ToolTip "Signal for extending"}
+	outExtend : BOOL;
+END_VAR
+VAR
+	{attribute addProperty Name "Manual Retract"}
+	{attribute addProperty ToolTip "Executes retraction in manual mode"}
+	_manualRetract : BOOL;
+	{attribute addProperty Name "Manual Extend"}
+	{attribute addProperty ToolTip "Executes extension in manual mode"}
+	_manualExtend : BOOL;
+	{attribute 'hide'}
+	_simulatedPosition : INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Extend" Id="{178ca14c-8244-4ed4-b4ef-c91570455acf}">
+      <Declaration><![CDATA[METHOD Extend : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[THIS^.outRetract := FALSE;
+THIS^.outExtend := TRUE;
+
+Extend := THIS^.inExtended;
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Manual" Id="{7d648aee-53bd-4128-8080-50b29e765f96}">
+      <Declaration><![CDATA[METHOD Manual : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF(THIS^._manualExtend AND_THEN THIS^.Extend()) THEN THIS^._manualExtend := FALSE; END_IF;
+IF(THIS^._manualRetract AND_THEN THIS^.Retract()) THEN THIS^._manualRetract := FALSE; END_IF;
+
+THIS^._manualExtend := FALSE;
+THIS^._manualRetract := FALSE;
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Retract" Id="{a370ce29-ef9c-48c3-bfac-10eabf79b7c6}">
+      <Declaration><![CDATA[METHOD Retract : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[THIS^.outRetract := TRUE;
+THIS^.outExtend := FALSE;
+
+Retract := THIS^.inRetracted;
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="SimulateInputs" Id="{4a2691fc-f991-4c45-9791-d15e2c6c0969}">
+      <Declaration><![CDATA[METHOD SimulateInputs : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF THIS^.outExtend THEN
+	THIS^.inRetracted := FALSE;
+	_simulatedPosition := _simulatedPosition + 1;
+	IF _simulatedPosition >= 100 THEN
+		_simulatedPosition := 100;
+		THIS^.inExtended := TRUE;
+	END_IF
+END_IF
+IF outRetract THEN
+	THIS^.inExtended := FALSE;
+	_simulatedPosition := _simulatedPosition - 1;
+	IF _simulatedPosition <= -100 THEN
+		_simulatedPosition := -100;
+		THIS^.inRetracted := TRUE;
+	END_IF
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="fbPneumaticActuator">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="fbPneumaticActuator.Extend">
+      <LineId Id="5" Count="1" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="fbPneumaticActuator.Manual">
+      <LineId Id="5" Count="1" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="9" Count="1" />
+    </LineIds>
+    <LineIds Name="fbPneumaticActuator.Retract">
+      <LineId Id="5" Count="1" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="fbPneumaticActuator.SimulateInputs">
+      <LineId Id="5" Count="1" />
+      <LineId Id="8" Count="2" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="13" Count="1" />
+      <LineId Id="16" Count="2" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="15" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

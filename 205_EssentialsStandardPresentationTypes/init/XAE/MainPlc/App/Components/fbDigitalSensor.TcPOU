@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+  <POU Name="fbDigitalSensor" Id="{357a6570-1163-4d42-b43c-5cd98bab1dac}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute wpf [Container(Layout.Wrap)]}
+{attribute wpf [Group(Layout.GroupBox)]}
+FUNCTION_BLOCK fbDigitalSensor
+VAR_INPUT
+	{attribute 'hide'}
+	Signal : BOOL;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	{attribute wpf [Container(Layout.UniformGrid)]}
+	{attribute addProperty Name "Value"}
+	{attribute addProperty ToolTip "Sensor actual value"}
+	Value : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Value := Signal;
+]]></ST>
+    </Implementation>
+    <Method Name="IsOff" Id="{6efed94f-c685-4163-9504-212d4b08b3cc}">
+      <Declaration><![CDATA[METHOD IsOff : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Value := Signal;
+
+IsOff := NOT Value;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="IsOn" Id="{e42e129b-fd03-4a9e-afd9-23ccb7c8924d}">
+      <Declaration><![CDATA[METHOD IsOn : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Value := Signal;
+
+IsOn := Value;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="fbDigitalSensor">
+      <LineId Id="26" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="fbDigitalSensor.IsOff">
+      <LineId Id="6" Count="1" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="fbDigitalSensor.IsOn">
+      <LineId Id="7" Count="1" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

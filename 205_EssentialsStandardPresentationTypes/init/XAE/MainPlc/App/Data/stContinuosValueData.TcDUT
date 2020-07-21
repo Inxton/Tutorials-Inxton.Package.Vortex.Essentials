@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <DUT Name="stContinuosValueData" Id="{5375d308-86c7-444f-bbf4-f6fc9d4a996b}">
+    <Declaration><![CDATA[{attribute wpf [Container(Layout.Wrap)]}
+{attribute wpf [Group(Layout.GroupBox)]}
+TYPE stContinuosValueData :
+STRUCT
+	{attribute addProperty Name "<#Min#>"}
+	Mininum : REAL;
+	{attribute wpf [RenderIgnore("Control", "ShadowControl")]}
+	{attribute addProperty Name "<#Aquired#>"}	
+	Measured : REAL;
+	{attribute addProperty Name "<#Max#>"}
+	Maximum : REAL;	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

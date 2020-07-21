@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+  <POU Name="fbStation" Id="{7ce0f56f-7ff2-4971-bd9e-318f7037cca7}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute wpf [Container(Layout.Tabs)]}
+{attribute addProperty Name "STATION 01"}
+FUNCTION_BLOCK fbStation
+VAR		
+	{attribute wpf [Container(Layout.Stack)]}
+	{attribute addProperty Name "<#Select mode#>"}
+	_modeSelector : enumMode;
+	{attribute clr [ReadOnly()]}
+	{attribute addProperty Name "<#CurrentMode#>"}
+	_modeCurrent : enumMode;
+		
+	{attribute addProperty Name "<#Step description#>"}
+	_stepInfo : STRING[255];
+	
+	{attribute addProperty Name "<#Error description#>"}
+	_errorInfo : STRING[255];
+	
+	{attribute addProperty Name "<#Components#>"}
+	_components : stComponents;
+	
+	{attribute addProperty Name "<#Data#>"}
+	_data : stData;
+	
+	_step : INT;
+
+	_ground_done : BOOL;
+
+	{attribute 'hide'}
+	_errorTimer : TON;
+	{attribute 'hide'}
+	_lastStep : INT;
+	
+	{attribute 'hide'}
+	_x : fbValueSimulation;
+	{attribute 'hide'}
+	_y : fbValueSimulation;
+	{attribute 'hide'}
+	_z : fbValueSimulation;
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[_components._pneumatics._horizontalPiston(inRetracted := IO.i10A1_CH1,
+										  inExtended := IO.i10A1_CH2,
+										  outRetract => IO.q10A2_CH1,
+										  outExtend => IO.q10A2_CH2);
+										  
+_components._pneumatics._verticalPiston(inRetracted := IO.i10A1_CH3,
+										  inExtended := IO.i10A1_CH4,
+										  outRetract => IO.q10A2_CH3,
+										  outExtend => IO.q10A2_CH4);										  
+
+										  
+_components._pneumatics._gripper(inRetracted := IO.i10A1_CH6,
+										  inExtended := IO.i10A1_CH5,
+										  outRetract => IO.q10A2_CH6,
+										  outExtend => IO.q10A2_CH5);										  
+
+
+_components._pneumatics._conveyorEndStopper(inRetracted := IO.i10A1_CH7,
+										  inExtended := IO.i10A1_CH8,
+										  outRetract => IO.q10A2_CH7,
+										  outExtend => IO.q10A2_CH8);										  
+										
+_components._BrickInTakeOffPosition(Signal := IO.i10A1_CH9);
+_components._BrickInGripper(Signal := IO.i10A1_CH10);
+
+ _components._inputConveyor(inStop := _components._BrickInTakeOffPosition.IsOn(),
+							outMove => IO.q10A2_CH9);
+
+
+_x(MinValue:=247,MaxValue:=249);
+_y(MinValue:=499,MaxValue:=501);
+_z(MinValue:=248,MaxValue:=250);
+
+_components._X_DimSensor := _x.Value;
+_components._Y_DimSensor := _y.Value;
+_components._Z_DimSensor := _z.Value;
+
+							  
+										  
+_errorInfo := '';
+_stepInfo := '';
+//Reset step number in case of changing mode 
+IF _modeCurrent <> _modeSelector THEN
+	_step := 0;
+END_IF
+
+_modeCurrent := _modeSelector;
+
+CASE _modeCurrent OF
+	enumMode.Ground :
+		GroundMode();
+	enumMode.Automat :
+		AutomatMode();
+	enumMode.Manual:
+		ManualMode();	
+END_CASE]]></ST>
+    </Implementation>
+    <Method Name="AutomatMode" Id="{a16ec520-3a9b-4e7a-85d1-cc62c95f78b3}">
+      <Declaration><![CDATA[METHOD AutomatMode
+
+VAR_INST
+	_isOk : BOOL;	
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF NOT _ground_done THEN
+	RETURN;
+END_IF
+
+_errorTimer(IN := _step = _lastStep, PT := T#10S);
+
+IF(_errorTimer.Q) THEN
+	_errorInfo := '<#This operation is taking way too long#>';
+END_IF
+
+_lastStep := _step;
+
+CASE _step OF
+	0:		
+		_stepInfo := '<#Checking base position#>';		
+//		_components._inputConveyor.Run := TRUE;
+
+		IF(_components._pneumatics._verticalPiston.Retract() 
+		AND_THEN _components._pneumatics._gripper.Extend() 
+		AND_THEN _components._pneumatics._horizontalPiston.Retract()
+		AND_THEN _components._pneumatics._conveyorEndStopper.Retract()) 
+		THEN			
+			_step := _step + 100;		
+		END_IF
+	100:
+	   _stepInfo := '<#Measure the brick parameters.#>';
+	   _isOk := fcEvalConitinuos(Val := _components._X_DimSensor, Data := _data.DimX)
+				AND fcEvalConitinuos(Val := _components._Y_DimSensor, Data := _data.DimY)
+				AND fcEvalConitinuos(Val := _components._Z_DimSensor, Data := _data.DimZ);
+			IF _isOK THEN
+				_step := 1000;		
+			ELSE	
+				_step := _step + 100;		
+			END_IF;	
+	200:
+		_stepInfo := '<#Throwing away bad brick, openning end stoper.#>';
+		IF(_components._pneumatics._conveyorEndStopper.Extend()) THEN
+				_step := _step + 100;		
+		END_IF;   
+			
+	300:
+		_stepInfo := '<#Throwing away bad brick, moving conveyor.#>';
+		_components._inputConveyor.Run := TRUE;
+		IF(_components._BrickInTakeOffPosition.IsOff()) THEN
+			_step := _step + 100;		
+		END_IF;   
+
+	400:
+		_stepInfo := '<#Throwing away bad brick, moving conveyor.#>';
+		_components._inputConveyor.Run := FALSE;
+		IF(_components._BrickInTakeOffPosition.IsOn()) THEN
+			_step := _step + 100;		
+		END_IF;   
+
+	500:
+		_stepInfo := '<#Throwing away bad brick, closing end stoper.#>';
+		IF(_components._pneumatics._conveyorEndStopper.Extend()) THEN
+				_step := 1300;		
+		END_IF;   
+			
+	1000:
+		_stepInfo := '<#Take passed brick#>';
+		IF(_components._pneumatics._verticalPiston.Extend() 
+		AND_THEN _components._pneumatics._gripper.Retract())
+		THEN
+			_step := _step + 100;		
+		END_IF;   
+	1100:
+		_stepInfo := '<#Move passed brick to output conveyor#>';
+		IF(_components._pneumatics._verticalPiston.Retract()
+		AND_THEN _components._pneumatics._horizontalPiston.Extend()) 		
+		THEN			
+			_components._inputConveyor.Run := TRUE;
+			_step := _step + 100;		
+		END_IF;		
+	1200:
+		_stepInfo := '<#Unload passed brick at the output conveyor#>';
+		IF(_components._pneumatics._verticalPiston.Extend()
+		AND_THEN _components._pneumatics._gripper.Extend()) THEN
+			_step := _step + 100;		
+		END_IF;			
+	1300:		
+		_stepInfo := '<#Stop step conveyor#>';
+		_components._inputConveyor.Run := FALSE;
+		_step := 0;	
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GroundMode" Id="{ba79095a-266f-4b92-b4b8-ce063861ab4f}">
+      <Declaration><![CDATA[METHOD GroundMode : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+_errorTimer(IN := _step = _lastStep, PT := T#3S);
+
+IF(_errorTimer.Q) THEN
+	_errorInfo := '<#This operation is taking way too long#>';
+END_IF
+
+_lastStep := _step;
+
+CASE _step OF
+	0:
+		_ground_done := FALSE;
+		_step := 10;
+	10:		
+		_stepInfo := '<#Moving everything to ground position#>';		
+		IF(_components._pneumatics._verticalPiston.Retract() 
+		AND_THEN _components._pneumatics._gripper.Extend() 
+		AND_THEN _components._pneumatics._horizontalPiston.Retract()
+		AND_THEN _components._pneumatics._conveyorEndStopper.Retract()) 
+		THEN
+			_step := 100;		
+		END_IF
+	100:
+	   _stepInfo := '<#All in position ready to start#>';
+	   _ground_done := TRUE;
+	   _modeSelector := enumMode.None;
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="ManualMode" Id="{c6dac779-a999-44c0-8cdb-a17ac5a37643}">
+      <Declaration><![CDATA[METHOD ManualMode : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[_ground_done := FALSE;
+
+_components._pneumatics._gripper.Manual();
+_components._pneumatics._horizontalPiston.Manual();
+_components._pneumatics._verticalPiston.Manual();
+_components._pneumatics._conveyorEndStopper.Manual();
+_components._inputConveyor.Manual();]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="fbStation">
+      <LineId Id="98" Count="0" />
+      <LineId Id="100" Count="3" />
+      <LineId Id="105" Count="2" />
+      <LineId Id="104" Count="0" />
+      <LineId Id="108" Count="0" />
+      <LineId Id="99" Count="0" />
+      <LineId Id="110" Count="9" />
+      <LineId Id="109" Count="0" />
+      <LineId Id="280" Count="2" />
+      <LineId Id="177" Count="0" />
+      <LineId Id="276" Count="0" />
+      <LineId Id="278" Count="0" />
+      <LineId Id="214" Count="3" />
+      <LineId Id="223" Count="0" />
+      <LineId Id="319" Count="2" />
+      <LineId Id="218" Count="0" />
+      <LineId Id="212" Count="0" />
+      <LineId Id="178" Count="0" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="381" Count="0" />
+      <LineId Id="377" Count="3" />
+      <LineId Id="38" Count="1" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="16" Count="2" />
+      <LineId Id="68" Count="1" />
+      <LineId Id="20" Count="0" />
+    </LineIds>
+    <LineIds Name="fbStation.AutomatMode">
+      <LineId Id="130" Count="2" />
+      <LineId Id="68" Count="0" />
+      <LineId Id="71" Count="5" />
+      <LineId Id="69" Count="1" />
+      <LineId Id="12" Count="2" />
+      <LineId Id="133" Count="1" />
+      <LineId Id="15" Count="1" />
+      <LineId Id="102" Count="1" />
+      <LineId Id="18" Count="4" />
+      <LineId Id="43" Count="2" />
+      <LineId Id="104" Count="0" />
+      <LineId Id="123" Count="0" />
+      <LineId Id="106" Count="0" />
+      <LineId Id="124" Count="0" />
+      <LineId Id="108" Count="1" />
+      <LineId Id="111" Count="1" />
+      <LineId Id="135" Count="0" />
+      <LineId Id="115" Count="0" />
+      <LineId Id="110" Count="0" />
+      <LineId Id="144" Count="19" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="24" Count="2" />
+      <LineId Id="119" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="29" Count="1" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="37" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="128" Count="0" />
+      <LineId Id="120" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="82" Count="0" />
+      <LineId Id="125" Count="0" />
+      <LineId Id="83" Count="1" />
+      <LineId Id="121" Count="0" />
+      <LineId Id="86" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="56" Count="0" />
+      <LineId Id="129" Count="0" />
+      <LineId Id="54" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="fbStation.GroundMode">
+      <LineId Id="43" Count="0" />
+      <LineId Id="28" Count="5" />
+      <LineId Id="26" Count="1" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="40" Count="1" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="13" Count="1" />
+      <LineId Id="20" Count="1" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="11" Count="0" />
+    </LineIds>
+    <LineIds Name="fbStation.ManualMode">
+      <LineId Id="19" Count="1" />
+      <LineId Id="5" Count="2" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="15" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

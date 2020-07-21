@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="MainPlc.fbStepConveyorManualView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MainPlc"
+             xmlns:mainplc="clr-namespace:MainPlc;assembly=MainPlcConnector"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             HorizontalAlignment="Stretch"
+             VerticalAlignment="Stretch">
+    <d:UserControl.DataContext>
+        <mainplc:fbStepConveyor></mainplc:fbStepConveyor>
+    </d:UserControl.DataContext>
+    <GroupBox Header="{Binding AttributeName}" Margin="10">
+        <UniformGrid Rows="1" Columns="2">
+            <UniformGrid.Resources>
+                <Style TargetType="ToggleButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
+                    <Setter Property="Margin" Value="10"></Setter>
+                    <Setter Property="Template" Value="{StaticResource CustomizedToggleButton}"></Setter>
+                </Style>
+            </UniformGrid.Resources>
+            <Button x:Name="buttonMove" Content="{Binding _manualMove.AttributeName}" Click="ButtonMove_Click" ToolTip="{Binding _manualMove.AttributeToolTip}"/>
+            <UniformGrid Rows="2" Columns="1">
+                <TextBlock ToolTip="{Binding outMove.AttributeToolTip}">
+                <CheckBox IsChecked="{Binding outMove.Cyclic}" Content="{Binding outMove.AttributeName}" IsHitTestVisible="False"/>
+                </TextBlock>
+
+                <TextBlock ToolTip="{Binding inStop.AttributeToolTip}">
+                <CheckBox IsChecked="{Binding inStop.Cyclic}" Content="{Binding inStop.AttributeName}" IsHitTestVisible="False"/>
+                </TextBlock>
+            </UniformGrid>
+        </UniformGrid>
+    </GroupBox>
+</UserControl>

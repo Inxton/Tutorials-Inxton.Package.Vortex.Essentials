@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+  <POU Name="MAIN" Id="{16075815-a4a8-45db-abd4-3ff94277c648}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	_fbPneumaticActuator : fbPneumaticActuator;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[_fbPneumaticActuator.Manual();
+_fbPneumaticActuator.SimulateInputs();
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="7" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

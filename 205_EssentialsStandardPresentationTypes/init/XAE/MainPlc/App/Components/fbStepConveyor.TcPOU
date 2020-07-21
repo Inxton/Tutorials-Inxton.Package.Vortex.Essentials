@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+  <POU Name="fbStepConveyor" Id="{7e0f4cfc-9cb7-42de-b49f-70bfef52e2b0}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute wpf [Container(Layout.Wrap)]}
+{attribute wpf [Group(Layout.GroupBox)]}
+FUNCTION_BLOCK fbStepConveyor
+VAR_INPUT
+	{attribute wpf [Container(Layout.Stack)]}	
+	{attribute addProperty Name "Stop condition"}
+	{attribute addProperty ToolTip "Signal that stops the conveyor"}
+	inStop : BOOL;	
+END_VAR
+VAR_OUTPUT
+	{attribute wpf [Container(Layout.Stack)]}
+	{attribute addProperty Name "Move"}
+	{attribute addProperty ToolTip "Signal for moving conveyor"}
+	outMove : BOOL;
+END_VAR
+VAR
+	{attribute wpf [Container(Layout.UniformGrid)]}
+	{attribute addProperty Name "Move manual command"}
+	{attribute addProperty ToolTip "Triggers movement in manual mode if possible"}
+	_manualMove : BOOL;	
+	{attribute 'hide'}
+	_move : BOOL;	
+	{attribute 'hide'}
+	rtrg_inStop : R_TRIG;	
+	{attribute 'hide'}
+	_moveTimeout : TON;	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[rtrg_inStop(CLK := inStop);
+
+_moveTimeout(IN := THIS^._move, PT := T#500MS);
+
+IF rtrg_inStop.Q OR _moveTimeout.Q THEN
+	_move := FALSE;
+END_IF
+
+
+THIS^.outMove := _move;
+]]></ST>
+    </Implementation>
+    <Method Name="Manual" Id="{c189c067-fde9-444b-aad0-5e7ebd281a50}">
+      <Declaration><![CDATA[METHOD Manual ]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF THIS^._manualMove THEN THIS^._move := TRUE; END_IF;
+
+THIS^._manualMove := FALSE;
+]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Run" Id="{b4822184-83ee-442b-bef3-e48e30621107}">
+      <Declaration><![CDATA[PROPERTY Run : BOOL]]></Declaration>
+      <Get Name="Get" Id="{6d7fd730-2ef9-4833-85cb-83e91c3066ef}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{8f284d37-d2bd-4a50-aef3-1e205ee092e9}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_move := RUN;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <LineIds Name="fbStepConveyor">
+      <LineId Id="45" Count="0" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="34" Count="1" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="fbStepConveyor.Manual">
+      <LineId Id="6" Count="2" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="fbStepConveyor.Run.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="fbStepConveyor.Run.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

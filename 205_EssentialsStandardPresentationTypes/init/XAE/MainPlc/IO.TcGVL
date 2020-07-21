@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+  <GVL Name="IO" Id="{1b3ea539-e6cc-4869-9407-5e1623e11a61}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	i10A1_CH1	AT %I* :BOOL;
+	i10A1_CH2	AT %I* :BOOL;
+	i10A1_CH3	AT %I* :BOOL;
+	i10A1_CH4	AT %I* :BOOL;
+	i10A1_CH5	AT %I* :BOOL;
+	i10A1_CH6	AT %I* :BOOL;
+	i10A1_CH7	AT %I* :BOOL;
+	i10A1_CH8	AT %I* :BOOL;
+	i10A1_CH9	AT %I* :BOOL;
+	i10A1_CH10	AT %I* :BOOL;
+	i10A1_CH11	AT %I* :BOOL;
+	i10A1_CH12	AT %I* :BOOL;
+	i10A1_CH13	AT %I* :BOOL;
+	i10A1_CH14	AT %I* :BOOL;
+	i10A1_CH15	AT %I* :BOOL;
+	i10A1_CH16	AT %I* :BOOL;
+
+	q10A2_CH1	AT %Q* :BOOL;
+	q10A2_CH2	AT %Q* :BOOL;
+	q10A2_CH3	AT %Q* :BOOL;
+	q10A2_CH4	AT %Q* :BOOL;
+	q10A2_CH5	AT %Q* :BOOL;
+	q10A2_CH6	AT %Q* :BOOL;
+	q10A2_CH7	AT %Q* :BOOL;
+	q10A2_CH8	AT %Q* :BOOL;
+	q10A2_CH9	AT %Q* :BOOL;
+	q10A2_CH10	AT %Q* :BOOL;
+	q10A2_CH11	AT %Q* :BOOL;
+	q10A2_CH12	AT %Q* :BOOL;
+	q10A2_CH13	AT %Q* :BOOL;
+	q10A2_CH14	AT %Q* :BOOL;
+	q10A2_CH15	AT %Q* :BOOL;
+	q10A2_CH16	AT %Q* :BOOL;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

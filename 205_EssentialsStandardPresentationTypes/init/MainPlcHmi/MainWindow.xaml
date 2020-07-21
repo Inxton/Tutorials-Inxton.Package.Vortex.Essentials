@@ -1,0 +1,47 @@
+﻿<Window x:Class="MainPlcHmi.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MainPlcHmi"
+        xmlns:mainplc="clr-namespace:MainPlc;assembly=MainPlcConnector"
+        xmlns:vortex="http://vortex.mts/xaml"
+        mc:Ignorable="d"
+        DataContext="{x:Static mainplc:Entry.MainPlc}"
+        Title="MainWindow" Height="450" Width="800" WindowState="Maximized">
+    <Grid>
+            <TabControl>
+                <TabItem Header="Mode" DataContext="{Binding MAIN._station}">
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <vortex:RenderableContentControl DataContext="{Binding}" PresentationType="Base" PreferCustomized="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10">
+                            <vortex:RenderableContentControl.RootContainer>
+                                <Grid Style="{DynamicResource Card}" Margin="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                </Grid>
+                            </vortex:RenderableContentControl.RootContainer>
+                        </vortex:RenderableContentControl>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Service" DataContext="{Binding MAIN._station._components}">
+                    <vortex:RenderableContentControl DataContext="{Binding}" PresentationType="Manual-Control" PreferCustomized="True"></vortex:RenderableContentControl>
+                </TabItem>
+                <TabItem Header="Online data" DataContext="{Binding MAIN._station._data}">
+                    <vortex:RenderableContentControl DataContext="{Binding}" PresentationType="Display" PreferCustomized="True"></vortex:RenderableContentControl>
+                </TabItem>
+                <TabItem Header="Settings" DataContext="{Binding MAIN._station._data}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <vortex:RenderableContentControl DataContext="{Binding}" PresentationType="ShadowControl" PreferCustomized="True"></vortex:RenderableContentControl>
+                        <WrapPanel Grid.Row="1" HorizontalAlignment="Center">
+                            <Button x:Name="loadToPlcButton" Click="LoadToPlcButton_Click">LOAD TO PLC</Button>
+                        </WrapPanel>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+    </Grid>
+</Window>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+  <POU Name="MAIN" Id="{16075815-a4a8-45db-abd4-3ff94277c648}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	{attribute addProperty Name "Horizontal piston A1"}
+	_horizontalPiston : fbPneumaticActuator;
+	{attribute addProperty Name "Vertical piston A2"}
+	_verticalPiston : fbPneumaticActuator;
+	{attribute addProperty Name "Gripper A3"}
+	_gripper : fbPneumaticActuator;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[_horizontalPiston.Manual();
+_horizontalPiston.SimulateInputs();
+
+_verticalPiston.Manual();
+_verticalPiston.SimulateInputs();
+
+_gripper.Manual();
+_gripper.SimulateInputs();
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="8" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="27" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

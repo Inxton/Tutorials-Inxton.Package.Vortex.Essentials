@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+  <POU Name="fbValueSimulation" Id="{c7732cf4-431d-4422-8f53-ab53ba420281}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK fbValueSimulation
+VAR_INPUT
+	MinValue : REAL;
+	MaxValue : REAL;
+END_VAR
+VAR_OUTPUT
+	Value : REAL;
+END_VAR
+VAR
+	rn : DRAND;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[rn();
+
+Value := LREAL_TO_REAL(MinValue + rn.Num * (MaxValue-MinValue));
+]]></ST>
+    </Implementation>
+    <LineIds Name="fbValueSimulation">
+      <LineId Id="26" Count="0" />
+      <LineId Id="30" Count="1" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

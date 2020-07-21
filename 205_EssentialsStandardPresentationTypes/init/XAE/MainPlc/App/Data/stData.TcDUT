@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <DUT Name="stData" Id="{68d50cc4-ba2f-4543-8b33-33e2aefb97e2}">
+    <Declaration><![CDATA[{attribute wpf [Container(Layout.Stack)]}
+TYPE stData :
+STRUCT
+	{attribute addProperty Name "<#DimensionX#> [mm]"}			
+	DimX : stContinuosValueData;
+	{attribute addProperty Name "<#DimensionY#> [mm]"}
+	DimY : stContinuosValueData;
+	{attribute addProperty Name "<#DimensionZ#> [mm]"}
+	DimZ : stContinuosValueData;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
