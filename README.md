@@ -1,4 +1,4 @@
-![Inxton logo](https://github.com/Inxton/documentation/raw/master/assets/logo.png)
+![Inxton logo](https://github.com/Inxton/documentation/raw/master/common/assets/logo.png)
 
 # Welcome
 
