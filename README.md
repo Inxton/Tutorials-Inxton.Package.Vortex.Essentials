@@ -13,7 +13,7 @@ Make sure you have everything you need to start using examples in this repositor
 
 ## What to do next?
 
-Checkout documentation  [Inxton.Package.Vortex.Core](https://github.com/Inxton/Inxton.Package.Vortex.Core)
+Checkout documentation  [Inxton.Package.Vortex.Essentials](https://github.com/Inxton/Inxton.Package.Vortex.Essentials)
 
 Install the extension from [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Inxton.InxtonVortexBuilderExtensionPre)
 
