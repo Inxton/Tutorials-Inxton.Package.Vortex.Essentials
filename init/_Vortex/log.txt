@@ -111,3 +111,7 @@
 2020-04-06 08:58:17.745 +02:00 [INF] Builder version : 0.116.0.0 / 0.116.0-alpha+Branch.develop.Sha.ee864079c906dcd48d747c45c28c5f5f052896a9
 2020-04-06 08:58:23.839 +02:00 [INF] Compiling sources 'MainPlc'...
 2020-04-06 08:58:25.324 +02:00 [INF] >>>>>>I, Done
+2021-03-22 12:06:57.870 +01:00 [INF] Builder version : 1.9.4.0 / 1.9.4+181.Branch.master.Sha.89921b3df5b23cdfe639f550582367c9957781ff
+2021-03-22 12:07:03.125 +01:00 [INF] Emitting files into 'C:\MTS\Develop\GitHub\Tomas-Example\Tutorials-Inxton.Package.Vortex.Essentials\init\MainPlcConnector\_generated'
+2021-03-22 12:07:03.168 +01:00 [INF] Compiling sources 'MainPlc'...
+2021-03-22 12:07:04.826 +01:00 [INF] >>>>>>I, Done

@@ -1,0 +1,48 @@
+{
+  "Types": [
+    {
+      "TypeAttributes": "",
+      "TypeName": "enumMode",
+      "Namespace": "MainPlc",
+      "TypeMetaInfo": 5
+    },
+    {
+      "TypeAttributes": "\n{attribute addProperty Name \"\" }",
+      "TypeName": "fbPneumaticActuator",
+      "Namespace": "MainPlc",
+      "TypeMetaInfo": 4
+    },
+    {
+      "TypeAttributes": "\n{attribute addProperty Name \"\" }",
+      "TypeName": "fbStation",
+      "Namespace": "MainPlc",
+      "TypeMetaInfo": 4
+    },
+    {
+      "TypeAttributes": "\n{attribute addProperty Name \"<#Components#>\" }",
+      "TypeName": "stComponents",
+      "Namespace": "MainPlc",
+      "TypeMetaInfo": 1
+    },
+    {
+      "TypeAttributes": "\n{attribute addProperty Name \"\" }",
+      "TypeName": "stContinuosValueData",
+      "Namespace": "MainPlc",
+      "TypeMetaInfo": 1
+    },
+    {
+      "TypeAttributes": "\n{attribute addProperty Name \"\" }",
+      "TypeName": "stData",
+      "Namespace": "MainPlc",
+      "TypeMetaInfo": 1
+    },
+    {
+      "TypeAttributes": "\n{attribute addProperty Name \"\" }",
+      "TypeName": "MAIN",
+      "Namespace": "MainPlc",
+      "TypeMetaInfo": 3
+    }
+  ],
+  "Name": "MainPlc",
+  "Namespace": "MainPlc"
+}

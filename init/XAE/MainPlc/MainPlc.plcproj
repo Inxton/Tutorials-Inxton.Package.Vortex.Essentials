@@ -15,6 +15,8 @@
     <Implicit_KindOfTask>{04e24ac3-7f6d-4ce9-bf74-d1b61941222e}</Implicit_KindOfTask>
     <Implicit_Jitter_Distribution>{74256b64-b83c-4246-bdc1-a9790ec06c21}</Implicit_Jitter_Distribution>
     <LibraryReferences>{6b4aff50-e274-41b4-b11b-9d2c2b021d8f}</LibraryReferences>
+    <DefaultNamespace>MainPlc</DefaultNamespace>
+    <Released>false</Released>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App\Components\fbPneumaticActuator.TcPOU">

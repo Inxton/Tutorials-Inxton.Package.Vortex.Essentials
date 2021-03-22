@@ -1,0 +1,59 @@
+{
+  "AliasBlocks": [],
+  "EnumBlocks": [
+    {
+      "Name": "enumMode",
+      "DeclarationText": "[NS : 'MainPlc' NAME : 'enumMode']\n{attribute 'qualified_only'}\n{attribute 'strict'}\nTYPE enumMode :\n(\n\tNone := 0,\n\tGround := 10,\n\tAutomat := 20,\n\tManual := 30\n);\nEND_TYPE\n",
+      "MirrorFiles": null
+    }
+  ],
+  "FunctionBlocks": [
+    {
+      "ImplementationText": "",
+      "Methods": [],
+      "Properties": [],
+      "Name": "fbPneumaticActuator",
+      "DeclarationText": "[NS : 'MainPlc' NAME : 'fbPneumaticActuator']\n{attribute wpf [Container(Layout.Wrap)]}\n{attribute wpf [Group(Layout.GroupBox)]}\nFUNCTION_BLOCK fbPneumaticActuator\nVAR_INPUT\n\t{attribute wpf [Container(Layout.Stack)]}\t\n\t{attribute addProperty Name \"Retracted\"}\n\t{attribute addProperty ToolTip \"Sensor indicating that the actuator is retracted\"}\n\tinRetracted : BOOL;\t\n\t{attribute addProperty Name \"Extend\"}\n\t{attribute addProperty ToolTip \"Sensor indicating that the actuator is extended\"}\n\tinExtended : BOOL;\t\nEND_VAR\nVAR_OUTPUT\n\t{attribute wpf [Container(Layout.Stack)]}\n\t{attribute addProperty Name \"Retract\"}\n\t{attribute addProperty ToolTip \"Signal for retracting\"}\n\toutRetract : BOOL;\n\t{attribute addProperty Name \"Extend\"}\n\t{attribute addProperty ToolTip \"Signal for Extending\"}\n\toutExtend : BOOL;\nEND_VAR\nVAR\n\t{attribute wpf [Container(Layout.UniformGrid)]}\n\t{attribute addProperty Name \"Manual Retract\"}\n\t{attribute addProperty ToolTip \"Executes retraction in manual mode\"}\n\t_manualRetract : BOOL;\n\t{attribute addProperty Name \"Manual Extend\"}\n\t{attribute addProperty ToolTip \"Executes extension in manual mode\"}\n\t_manualExtend : BOOL;\nEND_VAR\n",
+      "MirrorFiles": null
+    },
+    {
+      "ImplementationText": "",
+      "Methods": [],
+      "Properties": [],
+      "Name": "fbStation",
+      "DeclarationText": "[NS : 'MainPlc' NAME : 'fbStation']\n{attribute wpf [Container(Layout.Tabs)]}\nFUNCTION_BLOCK fbStation\nVAR\t\t\n\t{attribute wpf [Container(Layout.Stack)]}\n\t{attribute addProperty Name \"<#Select mode#>\"}\n\t_modeSelector : enumMode;\n\t{attribute clr [ReadOnly()]}\n\t{attribute addProperty Name \"<#CurrentMode#>\"}\n\t_modeCurrent : enumMode;\n\t\t\n\t{attribute addProperty Name \"<#Step description#>\"}\n\t_stepInfo : STRING[255];\n\t\n\t{attribute addProperty Name \"<#Error description#>\"}\n\t_errorInfo : STRING[255];\n\t\n\t{attribute addProperty Name \"<#Components#>\"}\n\t_components : stComponents;\n\t\n\t{attribute addProperty Name \"<#Data#>\"}\n\t_data : stData;\nEND_VAR\n",
+      "MirrorFiles": null
+    }
+  ],
+  "GlobalVariableTables": [],
+  "Name": "MainPlc",
+  "Namespace": "MainPlc",
+  "ProgramBlocks": [
+    {
+      "ImplementationText": "",
+      "Methods": [],
+      "Properties": [],
+      "Name": "MAIN",
+      "DeclarationText": "[NS : 'MainPlc' NAME : 'MAIN']\nPROGRAM MAIN\nVAR\n\t_station : fbStation;\t\nEND_VAR\n",
+      "MirrorFiles": null
+    }
+  ],
+  "StructBlocks": [
+    {
+      "Name": "stComponents",
+      "DeclarationText": "[NS : 'MainPlc' NAME : 'stComponents'] [STRUCT]\n{attribute wpf [Container(Layout.Stack)]}\n{attribute addProperty Name \"<#Components#>\"}\nTYPE stComponents :\nSTRUCT\t\n\t{attribute addProperty Name \"<#Horizontal piston#> A1\"}\t\n\t_horizontalPiston : fbPneumaticActuator;\n\t{attribute addProperty Name \"<#Vertical piston#> A2\"}\n\t_verticalPiston : fbPneumaticActuator;\n\t{attribute addProperty Name \"<#Gripper#> A3\"}\n\t_gripper : fbPneumaticActuator;\n\t{attribute addProperty Name \"<#Locker#> A4\"}\n\t_horizontalPistonLockerFailed : fbPneumaticActuator;\nEND_STRUCT\nEND_TYPE\n",
+      "MirrorFiles": null
+    },
+    {
+      "Name": "stContinuosValueData",
+      "DeclarationText": "[NS : 'MainPlc' NAME : 'stContinuosValueData'] [STRUCT]\n{attribute wpf [Container(Layout.Wrap)]}\n{attribute wpf [Group(Layout.GroupBox)]}\nTYPE stContinuosValueData :\nSTRUCT\n\t{attribute addProperty Name \"<#Min#>\"}\n\tMininum : REAL;\n\t{attribute wpf [RenderIgnore(\"Control\", \"ShadowControl\")]}\n\t{attribute addProperty Name \"<#Aquired#>\"}\t\n\tMeasured : REAL;\n\t{attribute addProperty Name \"<#Max#>\"}\n\tMaximum : REAL;\t\nEND_STRUCT\nEND_TYPE\n",
+      "MirrorFiles": null
+    },
+    {
+      "Name": "stData",
+      "DeclarationText": "[NS : 'MainPlc' NAME : 'stData'] [STRUCT]\n{attribute wpf [Container(Layout.Stack)]}\nTYPE stData :\nSTRUCT\n\t{attribute addProperty Name \"<#DimensionX#> [mm]\"}\t\t\t\n\tDimX : stContinuosValueData;\n\t{attribute addProperty Name \"<#DimensionY#> [mm]\"}\n\tDimY : stContinuosValueData;\n\t{attribute addProperty Name \"<#DimensionZ#> [mm]\"}\n\tDimZ : stContinuosValueData;\nEND_STRUCT\nEND_TYPE\n",
+      "MirrorFiles": null
+    }
+  ],
+  "UnionBlocks": []
+}
