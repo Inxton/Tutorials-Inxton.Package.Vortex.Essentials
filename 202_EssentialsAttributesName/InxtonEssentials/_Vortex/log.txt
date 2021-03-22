@@ -112,3 +112,8 @@
 2020-06-29 12:25:13.574 +02:00 [VRB] Creating localization for type MainPlc.MAIN
 2020-06-29 12:25:13.575 +02:00 [VRB] Creating localization for type MainPlc.MainPlcTwinController
 2020-06-29 12:25:13.648 +02:00 [INF] >>>>>>I, Done
+2021-03-22 11:45:54.516 +01:00 [INF] Builder version : 1.0.0.0 / 1.0.0+Branch.master.Sha.78115111a204fbfc55a8187cd2a854f5d9d87fed
+2021-03-22 11:52:14.267 +01:00 [INF] Builder version : 1.9.4.0 / 1.9.4+181.Branch.master.Sha.89921b3df5b23cdfe639f550582367c9957781ff
+2021-03-22 11:52:19.453 +01:00 [INF] Emitting files into 'C:\MTS\Develop\GitHub\Tomas-Example\Tutorials-Inxton.Package.Vortex.Essentials\202_EssentialsAttributesName\InxtonEssentials\MainPlcConnector\_generated'
+2021-03-22 11:52:19.496 +01:00 [INF] Compiling sources 'MainPlc'...
+2021-03-22 11:52:21.755 +01:00 [INF] >>>>>>I, Done

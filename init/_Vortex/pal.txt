@@ -143,3 +143,9 @@
 2020-04-06 08:58:22.617 +02:00 [INF] Building project 'MainPlc.MainPlc'
 2020-04-06 08:58:22.618 +02:00 [INF] Installing project libraries into project 'MainPlc'
 2020-04-06 08:58:22.833 +02:00 [INF] Updating project MainPlc.MainPlc
+2021-03-22 12:07:00.815 +01:00 [INF] Opening solution: C:\MTS\Develop\GitHub\Tomas-Example\Tutorials-Inxton.Package.Vortex.Essentials\init\XAE.sln
+2021-03-22 12:07:01.004 +01:00 [INF] Loading dependency tree for project 'C:\MTS\Develop\GitHub\Tomas-Example\Tutorials-Inxton.Package.Vortex.Essentials\init\MainPlcConnector\MainPlcConnector.csproj'
+2021-03-22 12:07:01.484 +01:00 [INF] Building project 'MainPlc.MainPlc'
+2021-03-22 12:07:01.588 +01:00 [INF] Updating project MainPlc.MainPlc
+2021-03-22 12:07:04.496 +01:00 [INF] Compiling plc library MainPlc into C:\MTS\Develop\GitHub\Tomas-Example\Tutorials-Inxton.Package.Vortex.Essentials\init\MainPlcConnector\_meta\MainPlc...
+2021-03-22 12:07:04.747 +01:00 [INF] Library for project MainPlc will not be created because it is not a managed library. If want the library to be compiled you will need to fill in information in property tab of the project.

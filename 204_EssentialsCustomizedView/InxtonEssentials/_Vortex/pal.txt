@@ -89,3 +89,9 @@
 2020-06-29 17:14:13.993 +02:00 [VRB] Adding link to the file'C:\WORK\INXTON_ESSENTIALS\204_EssentialsCustomizedView\InxtonEssentials\_Vortex\out\MainPlc\src\singles\fbPneumaticActuator.g.cs' to project 'MainPlc'
 2020-06-29 17:14:13.993 +02:00 [VRB] Adding link to the file'C:\WORK\INXTON_ESSENTIALS\204_EssentialsCustomizedView\InxtonEssentials\_Vortex\out\MainPlc\src\singles\MAIN.g.cs' to project 'MainPlc'
 2020-06-29 17:14:13.993 +02:00 [VRB] Adding link to the file'C:\WORK\INXTON_ESSENTIALS\204_EssentialsCustomizedView\InxtonEssentials\_Vortex\out\MainPlc\src\singles\MainPlc.g.cs' to project 'MainPlc'
+2021-03-22 11:59:06.961 +01:00 [INF] Opening solution: C:\MTS\Develop\GitHub\Tomas-Example\Tutorials-Inxton.Package.Vortex.Essentials\204_EssentialsCustomizedView\InxtonEssentials\InxtonEssentials.sln
+2021-03-22 11:59:07.136 +01:00 [INF] Loading dependency tree for project 'C:\MTS\Develop\GitHub\Tomas-Example\Tutorials-Inxton.Package.Vortex.Essentials\204_EssentialsCustomizedView\InxtonEssentials\MainPlcConnector\MainPlcConnector.csproj'
+2021-03-22 11:59:07.592 +01:00 [INF] Building project 'MainPlc.MainPlc'
+2021-03-22 11:59:07.690 +01:00 [INF] Updating project MainPlc.MainPlc
+2021-03-22 11:59:10.252 +01:00 [INF] Compiling plc library MainPlc into C:\MTS\Develop\GitHub\Tomas-Example\Tutorials-Inxton.Package.Vortex.Essentials\204_EssentialsCustomizedView\InxtonEssentials\MainPlcConnector\_meta\MainPlc...
+2021-03-22 11:59:10.426 +01:00 [INF] Library for project MainPlc will not be created because it is not a managed library. If want the library to be compiled you will need to fill in information in property tab of the project.

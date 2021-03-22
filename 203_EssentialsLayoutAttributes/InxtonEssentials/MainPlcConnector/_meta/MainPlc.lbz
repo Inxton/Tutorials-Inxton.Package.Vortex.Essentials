@@ -1,0 +1,29 @@
+{
+  "AliasBlocks": [],
+  "EnumBlocks": [],
+  "FunctionBlocks": [
+    {
+      "ImplementationText": "",
+      "Methods": [],
+      "Properties": [],
+      "Name": "fbPneumaticActuator",
+      "DeclarationText": "[NS : 'MainPlc' NAME : 'fbPneumaticActuator']\n{attribute wpf [Container(Layout.Wrap)]}\n{attribute wpf [Group(Layout.GroupBox)]}\nFUNCTION_BLOCK fbPneumaticActuator\nVAR_INPUT\n\t{attribute wpf [Container(Layout.Stack)]}\n\t{attribute clr [ReadOnly()]}\n\t{attribute addProperty Name \"Retracted\"}\n\t{attribute addProperty ToolTip \"Sensor indicating that the actuator is retracted\"}\n\tinRetracted : BOOL;\n\t{attribute clr [ReadOnly()]}\n\t{attribute addProperty Name \"Extended\"}\n\t{attribute addProperty ToolTip \"Sensor indicating that the actuator is extended\"}\n\tinExtended : BOOL;\nEND_VAR\nVAR_OUTPUT\n\t{attribute wpf [Container(Layout.Stack)]}\n\t{attribute clr [ReadOnly()]}\n\t{attribute addProperty Name \"Retract\"}\n\t{attribute addProperty ToolTip \"Signal for retracting\"}\n\toutRetract : BOOL;\n\t{attribute clr [ReadOnly()]}\n\t{attribute addProperty Name \"Extend\"}\n\t{attribute addProperty ToolTip \"Signal for extending\"}\n\toutExtend : BOOL;\nEND_VAR\nVAR\n\t{attribute wpf [Container(Layout.Stack)]}\n\t{attribute addProperty Name \"Manual Retract\"}\n\t{attribute addProperty ToolTip \"Executes retraction in manual mode\"}\n\t_manualRetract : BOOL;\n\t{attribute addProperty Name \"Manual Extend\"}\n\t{attribute addProperty ToolTip \"Executes extension in manual mode\"}\n\t_manualExtend : BOOL;\n\t{attribute 'hide'}\n\t_simulatedPosition : INT;\nEND_VAR\n",
+      "MirrorFiles": null
+    }
+  ],
+  "GlobalVariableTables": [],
+  "Name": "MainPlc",
+  "Namespace": "MainPlc",
+  "ProgramBlocks": [
+    {
+      "ImplementationText": "",
+      "Methods": [],
+      "Properties": [],
+      "Name": "MAIN",
+      "DeclarationText": "[NS : 'MainPlc' NAME : 'MAIN']\nPROGRAM MAIN\nVAR\n\t_fbPneumaticActuator : fbPneumaticActuator;\nEND_VAR\n",
+      "MirrorFiles": null
+    }
+  ],
+  "StructBlocks": [],
+  "UnionBlocks": []
+}

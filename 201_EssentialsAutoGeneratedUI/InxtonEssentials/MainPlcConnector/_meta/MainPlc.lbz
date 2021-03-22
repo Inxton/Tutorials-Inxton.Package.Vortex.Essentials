@@ -1,0 +1,29 @@
+{
+  "AliasBlocks": [],
+  "EnumBlocks": [],
+  "FunctionBlocks": [
+    {
+      "ImplementationText": "",
+      "Methods": [],
+      "Properties": [],
+      "Name": "fbPneumaticActuator",
+      "DeclarationText": "[NS : 'MainPlc' NAME : 'fbPneumaticActuator']\nFUNCTION_BLOCK fbPneumaticActuator\nVAR_INPUT\ninRetracted : BOOL;\ninExtended : BOOL;\nEND_VAR\nVAR_OUTPUT\n\toutRetract : BOOL;\n\toutExtend : BOOL;\nEND_VAR\nVAR\n\t_manualRetract : BOOL;\n\t_manualExtend : BOOL;\n\t_simulatedPosition : INT;\nEND_VAR\n",
+      "MirrorFiles": null
+    }
+  ],
+  "GlobalVariableTables": [],
+  "Name": "MainPlc",
+  "Namespace": "MainPlc",
+  "ProgramBlocks": [
+    {
+      "ImplementationText": "",
+      "Methods": [],
+      "Properties": [],
+      "Name": "MAIN",
+      "DeclarationText": "[NS : 'MainPlc' NAME : 'MAIN']\nPROGRAM MAIN\nVAR\n\t_fbPneumaticActuator : fbPneumaticActuator;\nEND_VAR\n",
+      "MirrorFiles": null
+    }
+  ],
+  "StructBlocks": [],
+  "UnionBlocks": []
+}
